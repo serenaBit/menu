@@ -24,20 +24,25 @@
 
 	+gs-media(l, min)
 		width: 100%
+		z-index: 100
 		position: relative
 
 	&.out
-		transform: translate3d(-300px, 0px, 0)
+		transform: translate3d(-100%, 0px, 0)
 		+gs-media(l, min)
 			transform: translate3d(0px, 0px, 0)
 
 .firstNav__item
 	display: inline-block
 	position: relative
-
+	cursor: pointer
 	padding: 10px 20px
 	background: #009999
-	width: 200px
+	width: 100%
+
+	+gs-media(l, min)
+		width: 24%
+
 	a
 		color: #fff
 		text-decoration: none
@@ -47,26 +52,26 @@
 	
 
 .subMenu
-	width: 65%
-	position: absolute
-	left: 300px
+	width: 100%
+	position: fixed
+	left: 100%
 	top: 0
 	background: #009999
-	padding: 26px 40px
+	padding: 10px 20px
 
 	+gs-media(l, min)
 		left: 0
 		display: none
 		position: absolute
-		width: 200px
+		z-index: 200
 		top: 35px
-		z-index: 20
 
 
 .subMenu__item
 	padding: 10px 0
 	&:first-child
 		display: block
+		cursor: pointer
 		+gs-media(l, min)
 			display: none
 
@@ -112,11 +117,13 @@
 
 .container
 	background: #fff
-	padding: 10px
+	padding: 1000px 0
 	box-shadow: 0 0 10px #888888
 	transform: translate3d(0, 0, 0)
 	transform-style: preserve-3d
 	transition: 0.4s ease-in-out
+	position: relative
+
 	&.open
 		transform: translate3d(300px, 0, 0)
 		-webkit-backface-visibility: hidden

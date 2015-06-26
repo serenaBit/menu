@@ -11,6 +11,7 @@ class window.Menu
 		@initOpeners()
 		$(window).resize @resize
 		@resize()
+		@scroll()
 		@hover()
 
 	initMenu : =>
@@ -66,7 +67,29 @@ class window.Menu
 		, (e)=>
 			if window.desktopSize	then $(e.currentTarget).find('.js-subMenu').css 'display', 'none'
 
-			
+	scroll : =>
+		lastScrollTop = 0
+		$(window).scroll (e)=>
+			st = $(e.currentTarget).scrollTop()
+			if st > lastScrollTop
+				@btnToggle.css 'display', 'none'
+			else
+				@btnToggle.css 'display', 'block'
+			lastScrollTop = st
+
+
+# var lastScrollTop = 0;
+# $(window).scroll(function(event){
+#    var st = $(this).scrollTop();
+#    if (st > lastScrollTop){
+#        // downscroll code
+#    } else {
+#       // upscroll code
+#    }
+#    lastScrollTop = st;
+# });
+
+
 
 
 

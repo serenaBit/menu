@@ -3,6 +3,56 @@
 body {
   margin: 0; }
 
+/* line 1, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_reset.sass */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+/* line 22, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_reset.sass */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* line 26, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_reset.sass */
+body {
+  line-height: 1; }
+
+/* line 29, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_reset.sass */
+ol, ul {
+  list-style: none; }
+
+/* line 32, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_reset.sass */
+blockquote, q {
+  quotes: none; }
+
+/* line 35, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_reset.sass */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+/* line 40, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 /* line 3, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
 .header {
   display: block;
@@ -36,60 +86,66 @@ body {
     /* line 8, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
     .firstNav {
       width: 100%;
+      z-index: 100;
       position: relative; } }
-  /* line 29, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  /* line 30, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .firstNav.out {
-    transform: translate3d(-300px, 0px, 0); }
+    transform: translate3d(-100%, 0px, 0); }
     @media only screen and (min-width: 1024px) {
-      /* line 29, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+      /* line 30, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
       .firstNav.out {
         transform: translate3d(0px, 0px, 0); } }
 
-/* line 34, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+/* line 35, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
 .firstNav__item {
   display: inline-block;
   position: relative;
+  cursor: pointer;
   padding: 10px 20px;
   background: #009999;
-  width: 200px; }
-  /* line 41, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  width: 100%; }
+  @media only screen and (min-width: 1024px) {
+    /* line 35, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+    .firstNav__item {
+      width: 24%; } }
+  /* line 46, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .firstNav__item a {
     color: #fff;
     text-decoration: none; }
-  /* line 45, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  /* line 50, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .firstNav__item:hover {
     background: #00CC99; }
 
-/* line 49, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+/* line 54, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
 .subMenu {
-  width: 65%;
-  position: absolute;
-  left: 300px;
+  width: 100%;
+  position: fixed;
+  left: 100%;
   top: 0;
   background: #009999;
-  padding: 26px 40px; }
+  padding: 10px 20px; }
   @media only screen and (min-width: 1024px) {
-    /* line 49, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+    /* line 54, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
     .subMenu {
       left: 0;
       display: none;
       position: absolute;
-      width: 200px;
-      top: 35px;
-      z-index: 20; } }
+      z-index: 200;
+      top: 35px; } }
 
-/* line 66, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+/* line 70, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
 .subMenu__item {
   padding: 10px 0; }
-  /* line 68, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  /* line 72, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .subMenu__item:first-child {
-    display: block; }
+    display: block;
+    cursor: pointer; }
     @media only screen and (min-width: 1024px) {
-      /* line 68, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+      /* line 72, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
       .subMenu__item:first-child {
         display: none; } }
 
-/* line 74, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+/* line 79, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
 .toggle {
   content: "";
   height: 30px;
@@ -99,10 +155,10 @@ body {
   z-index: 1000;
   transition: all 0.4s ease-in-out; }
   @media only screen and (min-width: 1024px) {
-    /* line 74, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+    /* line 79, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
     .toggle {
       display: none; } }
-  /* line 87, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  /* line 92, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .toggle:after, .toggle:before {
     content: "";
     display: block;
@@ -112,32 +168,33 @@ body {
     margin: 10px;
     transition: 0.3s linear;
     position: absolute; }
-  /* line 97, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  /* line 102, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .toggle:after {
     bottom: 0; }
-  /* line 100, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  /* line 105, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .toggle:before {
     top: 0; }
-  /* line 103, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  /* line 108, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .toggle.active {
     transform: translate3d(300px, 0, 0); }
-    /* line 105, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+    /* line 110, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
     .toggle.active:after {
       transform: rotate(45deg); }
-    /* line 107, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+    /* line 112, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
     .toggle.active:before {
       transform: rotate(-45deg);
       top: 7px; }
 
-/* line 113, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+/* line 118, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
 .container {
   background: #fff;
-  padding: 10px;
+  padding: 1000px 0;
   box-shadow: 0 0 10px #888888;
   transform: translate3d(0, 0, 0);
   transform-style: preserve-3d;
-  transition: 0.4s ease-in-out; }
-  /* line 120, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  transition: 0.4s ease-in-out;
+  position: relative; }
+  /* line 127, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .container.open {
     transform: translate3d(300px, 0, 0);
     -webkit-backface-visibility: hidden; }
@@ -156,3 +213,7 @@ body {
 /* line 13, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_mappa.sass */
 input:focus .selectMap g {
   opacity: 0.3; }
+
+/* line 11, /Users/serenabeddini/Desktop/menu/assets/sass/application.sass */
+html * {
+  box-sizing: border-box; }

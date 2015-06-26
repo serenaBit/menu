@@ -5,6 +5,7 @@
   window.Menu = (function() {
     function Menu(ref) {
       this.ref = ref;
+      this.scroll = __bind(this.scroll, this);
       this.hover = __bind(this.hover, this);
       this.resize = __bind(this.resize, this);
       this.closeMenu = __bind(this.closeMenu, this);
@@ -21,6 +22,7 @@
       this.initOpeners();
       $(window).resize(this.resize);
       this.resize();
+      this.scroll();
       this.hover();
     }
 
@@ -108,6 +110,23 @@
           if (window.desktopSize) {
             return $(e.currentTarget).find('.js-subMenu').css('display', 'none');
           }
+        };
+      })(this));
+    };
+
+    Menu.prototype.scroll = function() {
+      var lastScrollTop;
+      lastScrollTop = 0;
+      return $(window).scroll((function(_this) {
+        return function(e) {
+          var st;
+          st = $(e.currentTarget).scrollTop();
+          if (st > lastScrollTop) {
+            _this.btnToggle.css('display', 'none');
+          } else {
+            _this.btnToggle.css('display', 'block');
+          }
+          return lastScrollTop = st;
         };
       })(this));
     };
