@@ -11,8 +11,7 @@
         <!--script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyolKvrxY9rTcHfwr_AbZv-f6q8ongNAM
 ">
-    </script-->
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>    
+    </script--> 
 
         <!-- Style block allowing child pages to inject their own styles -->
         {% block styles %}{% endblock %}
@@ -25,6 +24,9 @@
       
         <!-- Script block allowing child pages to inject their own scripts -->
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>  
-        {{ "maps.min.js" | asset_url | script_tag }}
+        {{ "menu.js" | asset_url | script_tag }}
+        
+        {{ "app.js" | asset_url | script_tag }}
+
     </body>
 </html>

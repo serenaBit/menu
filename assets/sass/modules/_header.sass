@@ -8,7 +8,29 @@
 .firstNav
 	position: relative
 	float: left
-	width: 100%
+	width: 65%
+	transition: 0.3s linear
+	overflow: visible
+	background: #009999
+	padding: 10px 20px
+	transform: translate3d(0px, 0px, 0)
+	position: fixed
+	a
+		color: #fff
+		text-decoration: none
+
+	+gs-media(m, min)
+		width: 45%
+
+	+gs-media(l, min)
+		width: 100%
+		position: relative
+
+	&.out
+		transform: translate3d(-300px, 0px, 0)
+		+gs-media(l, min)
+			transform: translate3d(0px, 0px, 0)
+
 .firstNav__item
 	display: inline-block
 	position: relative
@@ -23,30 +45,6 @@
 	&:hover
 		background: #00CC99
 	
-
-
-
-@media screen and (max-width: 1024px)
-	.firstNav
-		padding: 10px 20px
-		transform: translate3d(0px, 0px, 0)
-		background: #009999
-		transition: 0.3s linear
-		overflow: visible
-		a
-			color: #fff
-			text-decoration: none
-
-		&.out
-			transform: translate3d(-300px, 0px, 0)
-
-		width: 65%
-		position: fixed
-
-	.toggle
-		display: block
-		z-index: 1000
-
 
 .subMenu
 	width: 65%
@@ -75,11 +73,16 @@
 
 .toggle
 	content: ""
-	display: block
 	height: 30px
 	width: 30px
 	position: fixed
-	display: none
+	display: block
+	z-index: 1000
+	transition: all 0.4s ease-in-out 
+
+	+gs-media(l, min)
+		display: none
+
 
 	&:after, &:before
 		content: ""
@@ -98,6 +101,7 @@
 		top: 0
 
 	&.active
+		transform: translate3d(300px, 0, 0)
 		&:after
 			transform: rotate(45deg)
 		&:before
@@ -112,7 +116,7 @@
 	box-shadow: 0 0 10px #888888
 	transform: translate3d(0, 0, 0)
 	transform-style: preserve-3d
-	transition: 0.4s ease-out
+	transition: 0.4s ease-in-out
 	&.open
 		transform: translate3d(300px, 0, 0)
 		-webkit-backface-visibility: hidden

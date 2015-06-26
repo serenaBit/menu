@@ -198,7 +198,7 @@
     @else { @content; }
   }
   @else if $prefix == m {
-    @if ($type == min) or ($type == min-max) { @media only screen and (min-width: 990px) { @content; } }
+    @if ($type == min) or ($type == min-max) { @media only screen and (min-width: 700px) { @content; } }
     @else { @content; }
   }
   @else if $prefix == l {
