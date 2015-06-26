@@ -1,0 +1,124 @@
+@import "mixin" 
+
+.header
+	display: block
+	position: relative
+	+clearfix
+
+.firstNav
+	position: relative
+	float: left
+	width: 100%
+.firstNav__item
+	display: inline-block
+	position: relative
+
+	padding: 10px 20px
+	background: #009999
+	width: 200px
+	a
+		color: #fff
+		text-decoration: none
+
+	&:hover
+		background: #00CC99
+	
+
+
+
+@media screen and (max-width: 1024px)
+	.firstNav
+		padding: 10px 20px
+		transform: translate3d(0px, 0px, 0)
+		background: #009999
+		transition: 0.3s linear
+		overflow: visible
+		a
+			color: #fff
+			text-decoration: none
+
+		&.out
+			transform: translate3d(-300px, 0px, 0)
+
+		width: 65%
+		position: fixed
+
+	.toggle
+		display: block
+		z-index: 1000
+
+
+.subMenu
+	width: 65%
+	position: absolute
+	left: 300px
+	top: 0
+	background: #009999
+	padding: 26px 40px
+
+	+gs-media(l, min)
+		left: 0
+		display: none
+		position: absolute
+		width: 200px
+		top: 35px
+		z-index: 20
+
+
+.subMenu__item
+	padding: 10px 0
+	&:first-child
+		display: block
+		+gs-media(l, min)
+			display: none
+
+
+.toggle
+	content: ""
+	display: block
+	height: 30px
+	width: 30px
+	position: fixed
+	display: none
+
+	&:after, &:before
+		content: ""
+		display: block
+		height: 3px
+		width: 30px
+		background: #000
+		margin: 10px
+		transition: 0.3s linear
+		position: absolute
+
+	&:after
+		bottom: 0
+
+	&:before
+		top: 0
+
+	&.active
+		&:after
+			transform: rotate(45deg)
+		&:before
+			transform: rotate(-45deg)
+			top: 7px
+
+
+
+.container
+	background: #fff
+	padding: 10px
+	box-shadow: 0 0 10px #888888
+	transform: translate3d(0, 0, 0)
+	transform-style: preserve-3d
+	transition: 0.4s ease-out
+	&.open
+		transform: translate3d(300px, 0, 0)
+		-webkit-backface-visibility: hidden
+
+
+
+
+
+

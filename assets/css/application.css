@@ -1,0 +1,117 @@
+body {
+  margin: 0; }
+
+.header {
+  display: block;
+  position: relative; }
+  .header:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.subMenu {
+  width: 65%;
+  position: absolute;
+  left: 300px;
+  top: 0;
+  background: #009999;
+  padding: 26px 40px; }
+  @media only screen and (min-width: 1024px) {
+    .subMenu {
+      left: 0;
+      display: none;
+      position: absolute;
+      width: 200px;
+      top: 35px;
+      z-index: 20; } }
+
+.subMenu__item {
+  padding: 10px 0; }
+  .subMenu__item:first-child {
+    display: block; }
+    @media only screen and (min-width: 1024px) {
+      .subMenu__item:first-child {
+        display: none; } }
+
+.firstNav {
+  position: relative;
+  float: left;
+  width: 100%; }
+
+.firstNav__item {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  background: #009999;
+  width: 200px; }
+  .firstNav__item a {
+    color: #fff;
+    text-decoration: none; }
+  .firstNav__item:hover {
+    background: #00CC99; }
+
+.toggle {
+  content: "";
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  display: none; }
+  .toggle:after, .toggle:before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 30px;
+    background: #000;
+    margin: 10px;
+    transition: 0.3s linear;
+    position: absolute; }
+  .toggle:after {
+    bottom: 0; }
+  .toggle:before {
+    top: 0; }
+  .toggle.active:after {
+    transform: rotate(45deg); }
+  .toggle.active:before {
+    transform: rotate(-45deg);
+    top: 7px; }
+
+.container {
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 0 10px #888888;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
+  transition: 0.4s ease-out; }
+  .container.open {
+    transform: translate3d(300px, 0, 0);
+    -webkit-backface-visibility: hidden; }
+
+@media screen and (max-width: 1024px) {
+  .firstNav {
+    padding: 10px 20px;
+    transform: translate3d(0px, 0px, 0);
+    background: #009999;
+    transition: 0.3s linear;
+    overflow: visible;
+    width: 65%;
+    position: fixed; }
+    .firstNav a {
+      color: #fff;
+      text-decoration: none; }
+    .firstNav.out {
+      transform: translate3d(300px, 0px, 0); }
+
+  .toggle {
+    display: block;
+    z-index: 1000; } }
+.selectMap g {
+  cursor: pointer;
+  fill: #C46565; }
+  .selectMap g:hover, .selectMap g.active {
+    opacity: 0.3; }
+  .selectMap g.active {
+    stroke: red; }
+
+input:focus .selectMap g {
+  opacity: 0.3; }

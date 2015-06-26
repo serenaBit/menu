@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Title block allowing child pages to override -->
+        <title>{% block title %}Milano{% endblock %}</title>
+        <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+        <!-- Styles -->
+         
+        {{ "application.css" | asset_url | stylesheet_tag }}
+        
+        <!--script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyolKvrxY9rTcHfwr_AbZv-f6q8ongNAM
+">
+    </script-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>    
+
+        <!-- Style block allowing child pages to inject their own styles -->
+        {% block styles %}{% endblock %}
+    </head>
+    <body>
+            <!-- Include -->
+            {% include "header" %}
+            <!-- Content block, child page inject content -->
+            {% block content %}{% endblock %}
+      
+        <!-- Script block allowing child pages to inject their own scripts -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>  
+        {{ "maps.min.js" | asset_url | script_tag }}
+    </body>
+</html>
