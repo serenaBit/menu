@@ -15,6 +15,11 @@
 	padding: 10px 20px
 	transform: translate3d(0px, 0px, 0)
 	position: fixed
+
+	.dx &
+		right: 0
+		text-align: right
+		
 	a
 		color: #fff
 		text-decoration: none
@@ -26,11 +31,17 @@
 		width: 100%
 		z-index: 100
 		position: relative
+		.dx &
+			text-align: left
 
 	&.out
 		transform: translate3d(-100%, 0px, 0)
 		+gs-media(l, min)
 			transform: translate3d(0px, 0px, 0)
+
+		.dx &
+			transform: translate3d(100%, 0px, 0)
+
 
 .firstNav__item
 	display: inline-block
@@ -58,6 +69,9 @@
 	top: 0
 	background: #009999
 	padding: 10px 20px
+
+	.dx &
+		left: -100%
 
 	+gs-media(l, min)
 		left: 0
@@ -99,6 +113,9 @@
 		transition: 0.3s linear
 		position: absolute
 
+	.dx &
+		right: 30px
+
 	&:after
 		bottom: 0
 
@@ -106,7 +123,7 @@
 		top: 0
 
 	&.active
-		transform: translate3d(300px, 0, 0)
+		transform: translate3d(-300px, 0, 0)
 		&:after
 			transform: rotate(45deg)
 		&:before
@@ -127,6 +144,8 @@
 	&.open
 		transform: translate3d(300px, 0, 0)
 		-webkit-backface-visibility: hidden
+		.dx &
+			transform: translate3d(-300px, 0, 0)
 
 
 

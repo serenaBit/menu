@@ -57,9 +57,12 @@ class window.Menu
 			window.desktopSize = true
 			window.container.removeClass 'open'
 			@btnToggle.removeClass 'active'
+			@btnToggle.css 'display', 'none'
 			@closeMenu()
 		else
 			window.desktopSize = false
+			@btnToggle.css 'display', 'block'
+
 
 	hover : =>
 		@openers.hover (e)=>
@@ -70,12 +73,13 @@ class window.Menu
 	scroll : =>
 		lastScrollTop = 0
 		$(window).scroll (e)=>
-			st = $(e.currentTarget).scrollTop()
-			if st > lastScrollTop
-				@btnToggle.css 'display', 'none'
-			else
-				@btnToggle.css 'display', 'block'
-			lastScrollTop = st
+			if $(window).width() <= @sizeScreen
+				st = $(e.currentTarget).scrollTop()
+				if st > lastScrollTop
+					@btnToggle.css 'display', 'none'
+				else
+					@btnToggle.css 'display', 'block'
+				lastScrollTop = st
 
 
 # var lastScrollTop = 0;

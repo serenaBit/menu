@@ -92,9 +92,11 @@
         window.desktopSize = true;
         window.container.removeClass('open');
         this.btnToggle.removeClass('active');
+        this.btnToggle.css('display', 'none');
         return this.closeMenu();
       } else {
-        return window.desktopSize = false;
+        window.desktopSize = false;
+        return this.btnToggle.css('display', 'block');
       }
     };
 
@@ -120,13 +122,15 @@
       return $(window).scroll((function(_this) {
         return function(e) {
           var st;
-          st = $(e.currentTarget).scrollTop();
-          if (st > lastScrollTop) {
-            _this.btnToggle.css('display', 'none');
-          } else {
-            _this.btnToggle.css('display', 'block');
+          if ($(window).width() <= _this.sizeScreen) {
+            st = $(e.currentTarget).scrollTop();
+            if (st > lastScrollTop) {
+              _this.btnToggle.css('display', 'none');
+            } else {
+              _this.btnToggle.css('display', 'block');
+            }
+            return lastScrollTop = st;
           }
-          return lastScrollTop = st;
         };
       })(this));
     };
