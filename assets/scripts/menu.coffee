@@ -12,21 +12,23 @@ class window.Menu
 		$(window).resize @resize
 		@resize()
 		@scroll()
-		@hover()
+		@hover()	
 
 	initMenu : =>
-		@btnToggle.click (e)=>
-			e.preventDefault()
-			if !window.menuIsOpen
-				window.menuIsOpen = true
-				$(e.currentTarget).addClass 'active'
-				window.container.addClass 'open'
+		@btnToggle.click ()=>
+			@openMenu()
+		$(document).on('swiperight', window.container, @openMenu)
 
-			else
-				$(e.currentTarget).removeClass 'active'
-				window.container.removeClass 'open'
-				window.menuIsOpen = false
 
+	openMenu : =>
+		if !window.menuIsOpen
+			window.menuIsOpen = true
+			@btnToggle.addClass 'active'
+			window.container.addClass 'open'
+		else
+			@btnToggle.removeClass 'active'
+			window.container.removeClass 'open'
+			window.menuIsOpen = false	
 
 	initOpeners : =>
 		for i in [0...@openers.length]

@@ -10,6 +10,7 @@
       this.resize = __bind(this.resize, this);
       this.closeMenu = __bind(this.closeMenu, this);
       this.initOpeners = __bind(this.initOpeners, this);
+      this.openMenu = __bind(this.openMenu, this);
       this.initMenu = __bind(this.initMenu, this);
       console.log('hola patata');
       this.btnToggle = this.ref.find('.js-toggle');
@@ -27,20 +28,24 @@
     }
 
     Menu.prototype.initMenu = function() {
-      return this.btnToggle.click((function(_this) {
-        return function(e) {
-          e.preventDefault();
-          if (!window.menuIsOpen) {
-            window.menuIsOpen = true;
-            $(e.currentTarget).addClass('active');
-            return window.container.addClass('open');
-          } else {
-            $(e.currentTarget).removeClass('active');
-            window.container.removeClass('open');
-            return window.menuIsOpen = false;
-          }
+      this.btnToggle.click((function(_this) {
+        return function() {
+          return _this.openMenu();
         };
       })(this));
+      return $(document).on('swiperight', window.container, this.openMenu);
+    };
+
+    Menu.prototype.openMenu = function() {
+      if (!window.menuIsOpen) {
+        window.menuIsOpen = true;
+        this.btnToggle.addClass('active');
+        return window.container.addClass('open');
+      } else {
+        this.btnToggle.removeClass('active');
+        window.container.removeClass('open');
+        return window.menuIsOpen = false;
+      }
     };
 
     Menu.prototype.initOpeners = function() {

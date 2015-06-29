@@ -123,7 +123,9 @@
 		top: 0
 
 	&.active
-		transform: translate3d(-300px, 0, 0)
+		transform: translate3d(300px, 0, 0)
+		.dx &
+			transform: translate3d(-300px, 0, 0)
 		&:after
 			transform: rotate(45deg)
 		&:before

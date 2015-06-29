@@ -3,6 +3,7 @@
     <head>
         <!-- Title block allowing child pages to override -->
         <title>{% block title %}Milano{% endblock %}</title>
+        <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
         <!-- Styles -->
          
@@ -16,7 +17,7 @@
         <!-- Style block allowing child pages to inject their own styles -->
         {% block styles %}{% endblock %}
     </head>
-    <body class="dx">
+    <body class="">
             <!-- Include -->
             {% include "header" %}
             <!-- Content block, child page inject content -->
