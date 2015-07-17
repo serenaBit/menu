@@ -33,7 +33,11 @@
           return _this.openMenu();
         };
       })(this));
-      return $(document).on('swiperight', window.container, this.openMenu);
+      return $(document).on('pageinit', (function(_this) {
+        return function(e) {
+          return window.container.swiperight(_this.openMenu);
+        };
+      })(this));
     };
 
     Menu.prototype.openMenu = function() {

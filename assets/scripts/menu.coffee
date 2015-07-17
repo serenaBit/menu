@@ -17,8 +17,8 @@ class window.Menu
 	initMenu : =>
 		@btnToggle.click ()=>
 			@openMenu()
-		$(document).on('swiperight', window.container, @openMenu)
-
+		$(document).on('pageinit', (e)=>
+			window.container.swiperight(@openMenu))
 
 	openMenu : =>
 		if !window.menuIsOpen

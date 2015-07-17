@@ -3,7 +3,7 @@
     <head>
         <!-- Title block allowing child pages to override -->
         <title>{% block title %}Milano{% endblock %}</title>
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">        
         <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
         <!-- Styles -->
          
@@ -28,6 +28,8 @@
         {{ "menu.js" | asset_url | script_tag }}
         
         {{ "app.js" | asset_url | script_tag }}
+        {{ "jquery.mobile-1.4.5.js" | asset_url | script_tag }}
+
 
     </body>
 </html>
