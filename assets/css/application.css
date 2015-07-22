@@ -210,28 +210,27 @@ table {
 
 /* line 143, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
 .container {
-  background: #fff;
   box-shadow: 0 0 10px #888888;
   transform-style: preserve-3d;
   transition: 0.4s ease-in-out;
   position: relative;
   background-color: lightblue;
   text-align: center; }
-  /* line 152, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  /* line 151, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .container section {
     width: 100%;
     height: 400px; }
-  /* line 155, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+  /* line 154, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
   .container.open {
     transform: translate3d(70%, 0, 0);
     -webkit-transform: translate3d(70%, 0, 0);
     -webkit-perspective: 1000;
     -webkit-backface-visibility: hidden; }
     @media only screen and (min-width: 700px) {
-      /* line 155, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+      /* line 154, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
       .container.open {
         -webkit-transform: translate3d(45%, 0, 0); } }
-    /* line 163, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
+    /* line 162, /Users/serenabeddini/Desktop/menu/assets/sass/modules/_header.sass */
     .dx .container.open {
       transform: translate3d(-70%, 0, 0);
       -webkit-transform: translate3d(-70%, 0, 0); }
